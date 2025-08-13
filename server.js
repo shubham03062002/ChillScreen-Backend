@@ -17,8 +17,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://yourfrontend.com"
+"https://chill-screen-frontend.vercel.app"
 ];
 
 app.use(cors({
