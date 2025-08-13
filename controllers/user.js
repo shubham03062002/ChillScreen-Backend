@@ -51,10 +51,11 @@ export const login = async (req, res) => {
     // Store JWT in HTTP-only cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // only send over HTTPS in production
-      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production", // Vercel = production
+      sameSite: "None", // allow cross-origin
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
+    
 
     res.json({ message: "Login successful" });
   } catch (err) {
